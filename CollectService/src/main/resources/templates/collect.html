@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>UPI Collect</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f6f8;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 60px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        button {
+            width: 100%;
+            padding: 13px;
+            background: #222;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #444;
+        }
+
+        .response {
+            margin-top: 25px;
+        }
+
+        textarea {
+            width: 100%;
+            min-height: 200px;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-family: monospace;
+            resize: vertical;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h2>UPI Collect</h2>
+
+    <form method="post" action="/collect">
+
+        <label for="virtualAddress">
+            Virtual Address
+        </label>
+
+        <input
+            type="text"
+            id="virtualAddress"
+            name="virtualAddress"
+            placeholder="Enter Virtual Address"
+            required
+        >
+
+        <button type="submit">
+            Send Collect Request
+        </button>
+
+    </form>
+
+    <div class="response"
+         th:if="${response != null}">
+
+        <label>Decrypted Response</label>
+
+        <textarea
+            readonly
+            th:text="${response}">
+        </textarea>
+
+    </div>
+
+</div>
+
+</body>
+</html>

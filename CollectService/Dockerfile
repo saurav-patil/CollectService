@@ -19,8 +19,6 @@ FROM eclipse-temurin:17-jre
 
 WORKDIR /app
 
-COPY --from=build /app/target/CollectService-*.jar app.jar
-
-EXPOSE 10000
+COPY --from=build /app/target/CollectService-0.0.1-SNAPSHOT.jar app.jar
 
 ENTRYPOINT ["java", "-jar", "app.jar"]

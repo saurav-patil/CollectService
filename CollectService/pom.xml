@@ -13,6 +13,8 @@
 	<url>http://www.example.com</url>
 
 	<properties>
+		<enc-decryption-systemPath>
+			C:\Users\SAURAV\git\repository\CollectService/lib/enc-decryption.jar</enc-decryption-systemPath>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<maven.compiler.release>17</maven.compiler.release>
 	</properties>
@@ -87,10 +89,13 @@
 			<scope>test</scope>
 		</dependency>
 
+
 		<dependency>
-			<groupId>com.ecommerce</groupId>
-			<artifactId>product-service</artifactId>
+			<groupId>com.vtransact</groupId>
+			<artifactId>enc-decryption</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
+			<scope>system</scope>
+			<systemPath>${enc-decryption-systemPath}</systemPath>
 		</dependency>
 	</dependencies>
 

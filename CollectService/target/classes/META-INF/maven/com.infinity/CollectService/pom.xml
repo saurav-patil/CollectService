@@ -93,10 +93,10 @@
 		<dependency>
 			<groupId>com.vtransact</groupId>
 			<artifactId>enc-decryption</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
-			<scope>system</scope>
-			<systemPath>${enc-decryption-systemPath}</systemPath>
+			<version>0.0.1</version>
 		</dependency>
+
+
 	</dependencies>
 
 	<build>
